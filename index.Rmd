@@ -104,7 +104,6 @@ A tslm is used to fit linear models to time series including trend and seasonali
     
     #forecast 
     f <- reactive(forecast(fit(), h=12,level=c(80,95)))
-
 ```
 
 ---

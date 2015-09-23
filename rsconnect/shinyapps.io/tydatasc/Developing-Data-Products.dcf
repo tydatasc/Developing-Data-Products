@@ -1,8 +1,8 @@
 name: Developing-Data-Products
 account: tydatasc
 server: shinyapps.io
-bundleId: 271948
+bundleId: 272112
 url: https://tydatasc.shinyapps.io/Developing-Data-Products
-when: 1443014827.81478
+when: 1443023192.67312
 asMultiple: FALSE
 asStatic: FALSE

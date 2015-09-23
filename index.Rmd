@@ -66,9 +66,18 @@ There are 3 tabs on the web application.
 
 - "Exploratory" - allow you to select year range and present back a table plus some summaries
 
-- "Result" - Will show the actual and forecast data plus a plot
+```{r, echo=FALSE}
+rawdf <- read.csv("24temp.csv", sep = ';')
+rownames(rawdf) <- rawdf[,1]
+df <- rawdf[,-1]
+```
 
-A tslm is used to fit linear models to time series including trend and seasonality components.
+Summary such as Highest temperature is been show on the fly
+```{r, echo=FALSE}
+max(df)
+```
+
+- "Result" - Will show the actual and forecast data plus a plot
 
 ---
 
@@ -78,9 +87,25 @@ An ordered sequence of values of a variable at equally spaced time intervals.
 
 The usage of time series models:
 
-.fragment 1. Obtain an understanding of the underlying forces and structure that produced the observed data
+<h6>1. Obtain an understanding of the underlying forces and structure that produced the observed data</h6>
 
-.fragment 2. Fit a model and proceed to forecasting, monitoring or even feedback and feedforward control.
+<h6>2. Fit a model and proceed to forecasting, monitoring or even feedback and feedforward control.</h6>
+
+A tslm is used to fit linear models to time series including trend and seasonality components.
+
+```
+    #convert dataframe to time series
+    tsdf <- reactive(ts(as.vector(t(as.matrix(subdf()))), start = c(1984, 1), end = c(input$Year,12), frequency=12))
+    
+    #fit time series linear regression
+    fit <- reactive({
+        fitds <- tsdf()
+        tslm(fitds ~ trend + season)})
+    
+    #forecast 
+    f <- reactive(forecast(fit(), h=12,level=c(80,95)))
+
+```
 
 ---
 

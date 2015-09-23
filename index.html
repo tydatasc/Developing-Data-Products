@@ -82,10 +82,16 @@
 <ul>
 <li><p>&quot;About&quot; - a short notes about the work of this site</p></li>
 <li><p>&quot;Exploratory&quot; - allow you to select year range and present back a table plus some summaries</p></li>
-<li><p>&quot;Result&quot; - Will show the actual and forecast data plus a plot</p></li>
 </ul>
 
-<p>A tslm is used to fit linear models to time series including trend and seasonality components.</p>
+<p>Summary such as Highest temperature is been show on the fly</p>
+
+<pre><code>## [1] 29.5
+</code></pre>
+
+<ul>
+<li>&quot;Result&quot; - Will show the actual and forecast data plus a plot</li>
+</ul>
 
 </section>
 <section class='' data-state='' id='slide-4'>
@@ -94,9 +100,24 @@
 
 <p>The usage of time series models:</p>
 
-<p class='fragment'>1. Obtain an understanding of the underlying forces and structure that produced the observed data</p>
+<h6>1. Obtain an understanding of the underlying forces and structure that produced the observed data</h6>
 
-<p class='fragment'>2. Fit a model and proceed to forecasting, monitoring or even feedback and feedforward control.</p>
+<h6>2. Fit a model and proceed to forecasting, monitoring or even feedback and feedforward control.</h6>
+
+<p>A tslm is used to fit linear models to time series including trend and seasonality components.</p>
+
+<pre><code>    #convert dataframe to time series
+    tsdf &lt;- reactive(ts(as.vector(t(as.matrix(subdf()))), start = c(1984, 1), end = c(input$Year,12), frequency=12))
+
+    #fit time series linear regression
+    fit &lt;- reactive({
+        fitds &lt;- tsdf()
+        tslm(fitds ~ trend + season)})
+
+    #forecast 
+    f &lt;- reactive(forecast(fit(), h=12,level=c(80,95)))
+
+</code></pre>
 
 </section>
 <section class='' data-state='' id='slide-5'>

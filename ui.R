@@ -13,7 +13,7 @@ shinyUI(fluidPage(
                          p("This interactive web application is use for exploring and analyzing the 24 Hours Mean Temperature data."),
                          br(),
                          p("The data downloaded is converted to a Time Series object and follow by decomposing the time series into trend + season components without considering about the best fit model.
-                           This is due to demo purpose of showing how to create and share data product and the different is usually less than 1 degree celsius."),
+                           This is due to demo purpose of showing how to create and share data product and the different is usually less than 0.8 degree celsius."),
                          br(),
                          p("For more details about this website and data use, please read ", a("sildes", href = "http://tydatasc.github.io/Developing-Data-Products",target="_blank"))
                          )

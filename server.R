@@ -29,16 +29,18 @@ shinyServer(function(input, output){
     #forecast 
     f <- reactive(forecast(fit(), h=12,level=c(80,95)))
     
-    #output forecas
+    #output forecast data
     output$summary <- renderPrint({
         fds <- f()
         (fds)})
     
+    #output actual data
     actualdf <- reactive(df[input$Year - 1982,])
     output$actualdf <- renderPrint({
         actual <- actualdf() 
         (actual)})
     
+    #output plot
     output$Plot <- renderPlot({
         fds <- f()
         plot(fds, ylab="celsius", xlab="year")

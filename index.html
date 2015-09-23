@@ -106,16 +106,16 @@
 
 <p>A tslm is used to fit linear models to time series including trend and seasonality components.</p>
 
-<pre><code>    #convert dataframe to time series
-    tsdf &lt;- reactive(ts(as.vector(t(as.matrix(subdf()))), start = c(1984, 1), end = c(input$Year,12), frequency=12))
+<pre><code>#convert dataframe to time series
+tsdf &lt;- reactive(ts(as.vector(t(as.matrix(subdf()))), start = c(1984, 1), end = c(input$Year,12), frequency=12))
 
-    #fit time series linear regression
-    fit &lt;- reactive({
-        fitds &lt;- tsdf()
-        tslm(fitds ~ trend + season)})
+#fit time series linear regression
+fit &lt;- reactive({
+fitds &lt;- tsdf()
+tslm(fitds ~ trend + season)})
 
-    #forecast 
-    f &lt;- reactive(forecast(fit(), h=12,level=c(80,95)))
+#forecast 
+f &lt;- reactive(forecast(fit(), h=12,level=c(80,95)))
 </code></pre>
 
 </section>

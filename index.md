@@ -88,4 +88,4 @@ The usage of time series models:
 
 The forecast resut is very close to the actual with less than 0.8 degree celsius
 
-<img src="assets/img/result.png" style="background:none; border:none; box-shadow:none;">
+<img src="assets/img/Result.PNG" style="background:none; border:none; box-shadow:none;">

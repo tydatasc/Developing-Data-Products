@@ -18,6 +18,8 @@ knit        : slidify::knit2slides
 
 <small>[Lim Tee Yong](https://sg.linkedin.com/in/teeyong)</small>
 
+<small>[Source code](https://github.com/tydatasc/Developing-Data-Products)</small>
+
 ---&vertical
 
 ## About

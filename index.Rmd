@@ -18,6 +18,8 @@ knit        : slidify::knit2slides
 
 <small>[Lim Tee Yong](https://sg.linkedin.com/in/teeyong)</small>
 
+<small>[Source code](https://github.com/tydatasc/Developing-Data-Products)</small>
+
 ---&vertical
 
 ## About
@@ -86,4 +88,4 @@ The usage of time series models:
 
 The forecast resut is very close to the actual with less than 0.8 degree celsius
 
-<img src="assets/img/result.PNG" style="background:none; border:none; box-shadow:none;">
+<img src="assets/img/Result.PNG" style="background:none; border:none; box-shadow:none;">
